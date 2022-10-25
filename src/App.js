@@ -1,6 +1,6 @@
 import './App.css';
 import About from './components/about';
-import Gallery from './components/Gallery';
+import Gallery from './components/gallery';
 import Nav from './components/nav';
 import React, {useState} from 'react';
 
