@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { capitalizeFirstLetter } from "../../utils/helpers";
 
 function PhotoList({ currentCategory }) {
     const [photos] = useState([
@@ -99,6 +98,7 @@ function PhotoList({ currentCategory }) {
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
       ]);
+
     return (
         <div>
              <div className="flex-row">
