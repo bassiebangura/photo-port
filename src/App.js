@@ -8,6 +8,7 @@ import React, {useState} from 'react';
 
 
 function App() {
+
   const [categories] = useState([
     {
       name: "commercial",
@@ -21,15 +22,22 @@ function App() {
       description: "Fields, farmhouses, waterfalls, and the beauty of nature",
     },
   ]);
-
+  
+  const [contactSelected, setContactSelected] = useState(false);
   const [currentCategory, setCurrentCategory] = useState(categories[0]);
   return (
     <div>
-      <Nav  categories={categories} currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} />
+
+      <Nav  categories={categories} contactSelected={contactSelected} setContactSelected={setContactSelected} currentCategory={currentCategory} setCurrentCategory={setCurrentCategory} />
       <main>
-        <ContactForm />
-        <Gallery currentCategory={currentCategory} />
-        <About />
+        {!contactSelected ? (
+          <>
+           <Gallery currentCategory={currentCategory}></Gallery>
+           <About></About>
+          </>
+          ) : (
+            <ContactForm></ContactForm>
+          )}
       </main>
     </div>
   );
